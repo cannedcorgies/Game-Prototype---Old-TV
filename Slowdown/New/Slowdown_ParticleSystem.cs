@@ -17,7 +17,7 @@ public class Slowdown_ParticleSystem : MonoBehaviour
         private ParticleSystem.MinMaxCurve startLifetime_def;
     private ParticleSystem.VelocityOverLifetimeModule velocityModule;
         private ParticleSystem.MinMaxCurve speedModifier_def;
-    
+    private ParticleSystem.Particle[] particles;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +57,15 @@ public class Slowdown_ParticleSystem : MonoBehaviour
         if (!activated) { 
 
             activated = true;
+
+            particles = new ParticleSystem.Particle[ps.main.maxParticles];
+
+            int numParticlesAlive = ps.GetParticles(particles);
+            for (int i = 0; i < numParticlesAlive; i++)
+            {
+                particles[i].velocity *= tc.timeScale;
+            }
+            ps.SetParticles(particles, numParticlesAlive);
 
             main.startLifetime = 100 / (tc.timeScale * 100);
             velocityModule.speedModifier = tc.timeScale;

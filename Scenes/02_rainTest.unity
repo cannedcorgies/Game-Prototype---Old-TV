@@ -241,6 +241,52 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &718826030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 718826032}
+  - component: {fileID: 718826031}
+  m_Layer: 0
+  m_Name: Audio Pitch Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &718826031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718826030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9e817c9b3502448ad18efd14c909e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeCenter: {fileID: 1591900201}
+  activated: 0
+--- !u!4 &718826032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718826030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &813983112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3755793031923716863, guid: 21fdcff4fad3e754f8c0c47a13506725, type: 3}
@@ -665,6 +711,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6833680691884265132, guid: 21fdcff4fad3e754f8c0c47a13506725, type: 3}
+      propertyPath: volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8039439307168531090, guid: 21fdcff4fad3e754f8c0c47a13506725, type: 3}
       propertyPath: m_Name
       value: Rain
@@ -692,3 +742,4 @@ SceneRoots:
   - {fileID: 2036655074}
   - {fileID: 1591900203}
   - {fileID: 2038819995}
+  - {fileID: 718826032}
