@@ -17,6 +17,8 @@ public class Slowdown_ParticleSystem : MonoBehaviour
         private ParticleSystem.MinMaxCurve startLifetime_def;
     private ParticleSystem.VelocityOverLifetimeModule velocityModule;
         private ParticleSystem.MinMaxCurve speedModifier_def;
+    private ParticleSystemRenderer rendererModule;
+        private float lengthScale_def;
     private ParticleSystem.Particle[] particles;
 
     // Start is called before the first frame update
@@ -30,9 +32,11 @@ public class Slowdown_ParticleSystem : MonoBehaviour
         ps = gameObject.GetComponent<ParticleSystem>();
             main = ps.main;
             velocityModule = ps.velocityOverLifetime;
+        rendererModule = gameObject.GetComponent<ParticleSystemRenderer>();
 
         startLifetime_def = main.startLifetime;
         speedModifier_def = velocityModule.speedModifier;
+        lengthScale_def = rendererModule.lengthScale;
         
     }
 
@@ -69,6 +73,7 @@ public class Slowdown_ParticleSystem : MonoBehaviour
 
             main.startLifetime = 100 / (tc.timeScale * 100);
             velocityModule.speedModifier = tc.timeScale;
+            rendererModule.lengthScale *= (100 / (tc.timeScale * 100)) * (tc.timeScale * 10);
 
         }
 
@@ -82,6 +87,7 @@ public class Slowdown_ParticleSystem : MonoBehaviour
 
             main.startLifetime = startLifetime_def;
             velocityModule.speedModifier = speedModifier_def;
+            rendererModule.lengthScale = lengthScale_def;
 
         }
 
