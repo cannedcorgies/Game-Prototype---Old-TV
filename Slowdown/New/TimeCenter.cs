@@ -18,7 +18,7 @@ public class TimeCenter : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) {
 
             activated = true;
 
